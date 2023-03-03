@@ -42,15 +42,15 @@ class Dog {
 const markov = new Cat("Markov");
 const pavlov = new Dog("Pavlov");
 
-
+/*
 // debugger;
 Function.prototype.myBind = function (context) {
     let that = this; // this = markov.says
-    let bindTimeArgs = Array.from(arguments).slice(1, arguments.length);
+    let bindTimeArgs = Array.from(arguments).slice(1);
     // debugger;
     return function () {
         debugger;
-        args = bindTimeArgs + Array.from(arguments);
+        const args = bindTimeArgs.concat(Array.from(arguments));
 
 
         that.apply(context, args);
@@ -59,3 +59,18 @@ Function.prototype.myBind = function (context) {
 
 const notMarkovSays = markov.says.myBind(pavlov, "meow");
 notMarkovSays("me");
+*/
+
+// Function.prototype.myBind = function (...args) {
+//     let that = this;
+//     let context = args[0];
+//     let bindTimeArgs = args.slice(1, args.length);
+
+//     return function (...callTimeArgs) {
+//         const allArgs = bindTimeArgs.concat(callTimeArgs); // why is + so weird
+//         that.apply(context, allArgs);
+//     }
+// }
+
+// const notMarkovSays = markov.says.myBind(pavlov, "meow");
+// notMarkovSays("me");
